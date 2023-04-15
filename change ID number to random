@@ -1,0 +1,9 @@
+	<script>
+    const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}[]|\\;:\,./<>?'; 
+    const length = 20; 
+    const randomString = Array.from(crypto.getRandomValues(new Uint8Array(length))) 
+        .map((byte) => charset[byte % charset.length]) 
+        .join(''); 
+    const newUrl = "index.php?page=" + randomString; 
+    history.pushState(null, null, newUrl); 
+	</script>
